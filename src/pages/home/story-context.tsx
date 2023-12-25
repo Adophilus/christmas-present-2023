@@ -14,11 +14,13 @@ type StoryContext = { background: string, setStoryBackground: (color: StoryBackg
 
 export const StoryContext = createContext({
   background: "bg-transparent",
-  setStoryBackground: (color: StoryBackground) => { },
+  setStoryBackground (color: StoryBackground) {
+    this.background = color
+  },
 } satisfies StoryContext)
 
 export const StoryProvider: FunctionComponent<{ children: React.ReactNode }> = ({ children }) => {
-  const [state, setState] = useState<{ background: StoryBackground }>({ background: "bg-transparent" })
+  const [state, setState] = useState<{ background: string }>({ background: "bg-transparent" })
 
   return (
     <StoryContext.Provider value={{
@@ -31,6 +33,3 @@ export const StoryProvider: FunctionComponent<{ children: React.ReactNode }> = (
     </StoryContext.Provider>
   )
 }
-
-export type { StoryBackground }
-

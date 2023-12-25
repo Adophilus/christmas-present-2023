@@ -34,7 +34,7 @@ const StorySection: FunctionComponent<{
       }
     }
 
-    onscroll("dark")
+    onscroll()
 
     window.addEventListener('scroll', onscroll)
 

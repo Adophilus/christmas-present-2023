@@ -1,7 +1,5 @@
-import { StrictMode } from 'react'
 import {
   Outlet,
-  RouterProvider,
   Router,
   Route,
   RootRoute,
