@@ -1,12 +1,12 @@
-import { motion } from 'framer-motion';
 import Story from './story.tsx';
-import StoryContext, { StoryProvider } from './story-context.tsx';
+import { StoryProvider } from './story-context.tsx';
+import type { Section } from './story-section.tsx';
 
-export default function HomePage() {
+export default function HomePage({ sections }: { sections: Section[] }) {
   return (
     <div>
       <StoryProvider>
-        <Story />
+        <Story sections={sections} />
       </StoryProvider>
     </div>
   )

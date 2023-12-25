@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        Rubik: ["Rubik Doodle Shadow", "sans-serif"]
+        Rubik: ["Rubik Doodle Shadow", "sans-serif"],
+        Montserrat: ["Montserrat", "sans-serif"]
       }
     },
   },

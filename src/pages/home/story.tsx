@@ -1,27 +1,19 @@
 import { useContext } from 'react';
 import StorySection from './story-section.tsx';
 import { StoryContext } from './story-context.tsx';
+import { twMerge } from 'tailwind-merge';
+import type { Section } from './story-section.tsx';
 
-export default function Story() {
+export default function Story({ sections }: { sections: Section[] }) {
   const { background } = useContext(StoryContext)
 
   return (
-    <div className={background}>
-      <StorySection background="dark"
-        sections={[
-          {
-            text: "Thank you for all you've done for me"
-          },
-          {
-            text: "It brings the utmost joy to my heart"
-          }
-        ]}>
+    <div className={twMerge(background)} style={{
+      backgroundImage: "url('/imgs/background.svg')"
+    }}>
+      <StorySection
+        sections={sections}>
       </StorySection>
-      {/*
-      <StorySection background="light"></StorySection>
-      <StorySection background="light">That I want to wish you</StorySection>
-      <StorySection background="christmas">A Merry Christmas</StorySection>
-    */}
-    </div >
+    </div>
   )
 }
